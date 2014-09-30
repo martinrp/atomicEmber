@@ -1,0 +1,35 @@
+<div class="background-image" {{action 'goto' 1}}>
+	<img {{bind-attr src=model.bgImage}} />
+</div>
+
+<div {{bind-attr class=":title-content :row model.isWhite:white:"}} {{action 'goto' 1}}>
+	<div class="small-12 large-12 columns">
+		<h1>{{model.title}}</h1>
+		{{#if model.copy}}<h2>{{model.copy}}</h2>{{/if}}
+	</div>
+	<div class="small-12 large-12 columns">
+		<ul>
+			{{#each bullet in model.bullets}}
+				<li><h3>{{bullet}}</h3></li>
+			{{/each}}
+		</ul>
+	</div>
+</div>
+
+<div class="row" >
+	<div class="small-12 large-12 columns">
+		{{{model.html}}}
+		<img {{bind-attr src=model.image}}>
+	</div>
+</div>
+
+<div class="row subcopy" >
+	<div class="small-12 large-12 columns">
+		<p>{{{model.subcopy}}}</p>
+	</div>
+</div>
+
+
+
+
+{{yield}}
